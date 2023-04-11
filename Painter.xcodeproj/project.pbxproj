@@ -13,6 +13,25 @@
 		C52C9FB529E54C00007D616D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C52C9FB329E54C00007D616D /* Main.storyboard */; };
 		C52C9FB729E54C02007D616D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C52C9FB629E54C02007D616D /* Assets.xcassets */; };
 		C52C9FBA29E54C02007D616D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C52C9FB829E54C02007D616D /* LaunchScreen.storyboard */; };
+		C52C9FC329E54D87007D616D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FC229E54D87007D616D /* Coordinator.swift */; };
+		C52C9FC529E54E3E007D616D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FC429E54E3E007D616D /* MainCoordinator.swift */; };
+		C52C9FC929E55A40007D616D /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FC829E55A40007D616D /* HomeCoordinator.swift */; };
+		C52C9FCB29E55A59007D616D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FCA29E55A59007D616D /* HomeViewController.swift */; };
+		C52C9FCD29E55A65007D616D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FCC29E55A65007D616D /* HomeViewModel.swift */; };
+		C52C9FCF29E55A78007D616D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FCE29E55A78007D616D /* HomeView.swift */; };
+		C52C9FD229E55DE4007D616D /* FleetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FD129E55DE4007D616D /* FleetCoordinator.swift */; };
+		C52C9FD429E55DF3007D616D /* FleetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FD329E55DF3007D616D /* FleetViewModel.swift */; };
+		C52C9FD629E55E00007D616D /* FleetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FD529E55E00007D616D /* FleetViewController.swift */; };
+		C52C9FD829E55E09007D616D /* FleetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FD729E55E09007D616D /* FleetView.swift */; };
+		C52C9FDB29E56029007D616D /* MyWorkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FDA29E56029007D616D /* MyWorkCoordinator.swift */; };
+		C52C9FDD29E56036007D616D /* MyWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FDC29E56036007D616D /* MyWorkViewModel.swift */; };
+		C52C9FDF29E56048007D616D /* MyWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FDE29E56048007D616D /* MyWorkViewController.swift */; };
+		C52C9FE129E56056007D616D /* MyWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FE029E56056007D616D /* MyWorkView.swift */; };
+		C52C9FE429E56592007D616D /* Colors+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FE329E56592007D616D /* Colors+.swift */; };
+		C52C9FEA29E5681D007D616D /* Myriad-Pro-Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52C9FE729E5681C007D616D /* Myriad-Pro-Condensed.ttf */; };
+		C52C9FEB29E5681D007D616D /* Myriad-Pro-Bold-Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52C9FE829E5681C007D616D /* Myriad-Pro-Bold-Condensed.ttf */; };
+		C52C9FEC29E5681D007D616D /* Myriad-Pro-Light-Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52C9FE929E5681C007D616D /* Myriad-Pro-Light-Condensed.ttf */; };
+		C52C9FEF29E56951007D616D /* Fonts+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FEE29E56951007D616D /* Fonts+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +43,25 @@
 		C52C9FB629E54C02007D616D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C52C9FB929E54C02007D616D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C52C9FBB29E54C02007D616D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C52C9FC229E54D87007D616D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C52C9FC429E54E3E007D616D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		C52C9FC829E55A40007D616D /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		C52C9FCA29E55A59007D616D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C52C9FCC29E55A65007D616D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C52C9FCE29E55A78007D616D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C52C9FD129E55DE4007D616D /* FleetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetCoordinator.swift; sourceTree = "<group>"; };
+		C52C9FD329E55DF3007D616D /* FleetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetViewModel.swift; sourceTree = "<group>"; };
+		C52C9FD529E55E00007D616D /* FleetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetViewController.swift; sourceTree = "<group>"; };
+		C52C9FD729E55E09007D616D /* FleetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetView.swift; sourceTree = "<group>"; };
+		C52C9FDA29E56029007D616D /* MyWorkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkCoordinator.swift; sourceTree = "<group>"; };
+		C52C9FDC29E56036007D616D /* MyWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkViewModel.swift; sourceTree = "<group>"; };
+		C52C9FDE29E56048007D616D /* MyWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkViewController.swift; sourceTree = "<group>"; };
+		C52C9FE029E56056007D616D /* MyWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkView.swift; sourceTree = "<group>"; };
+		C52C9FE329E56592007D616D /* Colors+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+.swift"; sourceTree = "<group>"; };
+		C52C9FE729E5681C007D616D /* Myriad-Pro-Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad-Pro-Condensed.ttf"; sourceTree = "<group>"; };
+		C52C9FE829E5681C007D616D /* Myriad-Pro-Bold-Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad-Pro-Bold-Condensed.ttf"; sourceTree = "<group>"; };
+		C52C9FE929E5681C007D616D /* Myriad-Pro-Light-Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad-Pro-Light-Condensed.ttf"; sourceTree = "<group>"; };
+		C52C9FEE29E56951007D616D /* Fonts+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonts+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +94,11 @@
 		C52C9FAC29E54C00007D616D /* Painter */ = {
 			isa = PBXGroup;
 			children = (
-				C52C9FAD29E54C00007D616D /* AppDelegate.swift */,
+				C52C9FC629E55A28007D616D /* UI */,
+				C52C9FC129E54D7B007D616D /* Main */,
+				C52C9FE229E56567007D616D /* Extensions */,
 				C52C9FAF29E54C00007D616D /* SceneDelegate.swift */,
+				C52C9FAD29E54C00007D616D /* AppDelegate.swift */,
 				C52C9FB129E54C00007D616D /* ViewController.swift */,
 				C52C9FB329E54C00007D616D /* Main.storyboard */,
 				C52C9FB629E54C02007D616D /* Assets.xcassets */,
@@ -65,6 +106,86 @@
 				C52C9FBB29E54C02007D616D /* Info.plist */,
 			);
 			path = Painter;
+			sourceTree = "<group>";
+		};
+		C52C9FC129E54D7B007D616D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C52C9FC229E54D87007D616D /* Coordinator.swift */,
+				C52C9FC429E54E3E007D616D /* MainCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C52C9FC629E55A28007D616D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C52C9FD929E56016007D616D /* MyWork */,
+				C52C9FD029E55DD4007D616D /* Fleet */,
+				C52C9FC729E55A31007D616D /* Home */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C52C9FC729E55A31007D616D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C52C9FC829E55A40007D616D /* HomeCoordinator.swift */,
+				C52C9FCA29E55A59007D616D /* HomeViewController.swift */,
+				C52C9FCC29E55A65007D616D /* HomeViewModel.swift */,
+				C52C9FCE29E55A78007D616D /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C52C9FD029E55DD4007D616D /* Fleet */ = {
+			isa = PBXGroup;
+			children = (
+				C52C9FD129E55DE4007D616D /* FleetCoordinator.swift */,
+				C52C9FD329E55DF3007D616D /* FleetViewModel.swift */,
+				C52C9FD529E55E00007D616D /* FleetViewController.swift */,
+				C52C9FD729E55E09007D616D /* FleetView.swift */,
+			);
+			path = Fleet;
+			sourceTree = "<group>";
+		};
+		C52C9FD929E56016007D616D /* MyWork */ = {
+			isa = PBXGroup;
+			children = (
+				C52C9FDA29E56029007D616D /* MyWorkCoordinator.swift */,
+				C52C9FDC29E56036007D616D /* MyWorkViewModel.swift */,
+				C52C9FDE29E56048007D616D /* MyWorkViewController.swift */,
+				C52C9FE029E56056007D616D /* MyWorkView.swift */,
+			);
+			path = MyWork;
+			sourceTree = "<group>";
+		};
+		C52C9FE229E56567007D616D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C52C9FE529E56666007D616D /* Fonts */,
+				C52C9FE329E56592007D616D /* Colors+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C52C9FE529E56666007D616D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C52C9FE629E56807007D616D /* FontFiles */,
+				C52C9FEE29E56951007D616D /* Fonts+.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C52C9FE629E56807007D616D /* FontFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C52C9FE829E5681C007D616D /* Myriad-Pro-Bold-Condensed.ttf */,
+				C52C9FE729E5681C007D616D /* Myriad-Pro-Condensed.ttf */,
+				C52C9FE929E5681C007D616D /* Myriad-Pro-Light-Condensed.ttf */,
+			);
+			path = FontFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +246,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C52C9FEA29E5681D007D616D /* Myriad-Pro-Condensed.ttf in Resources */,
+				C52C9FEB29E5681D007D616D /* Myriad-Pro-Bold-Condensed.ttf in Resources */,
 				C52C9FBA29E54C02007D616D /* LaunchScreen.storyboard in Resources */,
 				C52C9FB729E54C02007D616D /* Assets.xcassets in Resources */,
 				C52C9FB529E54C00007D616D /* Main.storyboard in Resources */,
+				C52C9FEC29E5681D007D616D /* Myriad-Pro-Light-Condensed.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +262,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C52C9FDD29E56036007D616D /* MyWorkViewModel.swift in Sources */,
+				C52C9FCF29E55A78007D616D /* HomeView.swift in Sources */,
+				C52C9FD829E55E09007D616D /* FleetView.swift in Sources */,
+				C52C9FC329E54D87007D616D /* Coordinator.swift in Sources */,
 				C52C9FB229E54C00007D616D /* ViewController.swift in Sources */,
+				C52C9FD429E55DF3007D616D /* FleetViewModel.swift in Sources */,
 				C52C9FAE29E54C00007D616D /* AppDelegate.swift in Sources */,
+				C52C9FCD29E55A65007D616D /* HomeViewModel.swift in Sources */,
+				C52C9FD229E55DE4007D616D /* FleetCoordinator.swift in Sources */,
+				C52C9FD629E55E00007D616D /* FleetViewController.swift in Sources */,
+				C52C9FC529E54E3E007D616D /* MainCoordinator.swift in Sources */,
 				C52C9FB029E54C00007D616D /* SceneDelegate.swift in Sources */,
+				C52C9FCB29E55A59007D616D /* HomeViewController.swift in Sources */,
+				C52C9FE129E56056007D616D /* MyWorkView.swift in Sources */,
+				C52C9FDF29E56048007D616D /* MyWorkViewController.swift in Sources */,
+				C52C9FEF29E56951007D616D /* Fonts+.swift in Sources */,
+				C52C9FE429E56592007D616D /* Colors+.swift in Sources */,
+				C52C9FC929E55A40007D616D /* HomeCoordinator.swift in Sources */,
+				C52C9FDB29E56029007D616D /* MyWorkCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
