@@ -11,6 +11,12 @@ import UIKit
 extension UIColor {
     static let primary = rgb(255, 203, 0)
     
+    static let gray = rgb(144,144,144)
+    
+    static let grayShadow = rgb(166, 179, 194)
+    
+    static let gradient1 = rgb(0, 0, 0).withAlphaComponent(0)
+    static let gradient2 = rgb(0, 0, 0).withAlphaComponent(0.1)
 }
 
 
