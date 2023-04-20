@@ -108,6 +108,8 @@ extension MyWorkCardView {
     
     func setupConstraints() {
         
+        self.layer.cornerRadius = 4
+        
         projectLabel.anchor(top: (self.topAnchor,10), leading: (self.leadingAnchor, 16), size: CGSize(width: (UIScreen.main.bounds.width / 3) - 64, height: 16) )
         jobLabel.anchor(top: (self.topAnchor,10),leading: (projectLabel.trailingAnchor, 16), size: CGSize(width: (UIScreen.main.bounds.width / 3) - 64, height: 16))
         //breaking constraints??

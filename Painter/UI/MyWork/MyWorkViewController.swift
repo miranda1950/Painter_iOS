@@ -77,6 +77,10 @@ final class MyWorkViewController: UIViewController {
         view.addSubview(gradView)
         return(gradView)
     }()
+}
+
+
+extension MyWorkViewController {
     
     private func setupConstraints() {
         
@@ -90,5 +94,4 @@ final class MyWorkViewController: UIViewController {
         gradientView.anchor(top: (navBarView.bottomAnchor,0))
  
     }
-    
 }

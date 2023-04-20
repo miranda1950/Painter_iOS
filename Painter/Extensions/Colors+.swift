@@ -14,6 +14,8 @@ extension UIColor {
     static let gray = rgb(144,144,144)
     
     static let grayShadow = rgb(166, 179, 194)
+    static let paleGray = rgb(242, 242, 242)
+    static let grayLabel = rgb(192, 192, 192)
     
     static let gradient1 = rgb(0, 0, 0).withAlphaComponent(0)
     static let gradient2 = rgb(0, 0, 0).withAlphaComponent(0.1)
