@@ -10,7 +10,6 @@ import UIKit
 
 final class MyWorkCardView: UIView {
     
-    
     private var projects: String
     private var jobs: String
     private var search: String
@@ -28,7 +27,7 @@ final class MyWorkCardView: UIView {
         self.searchImageName = searchImageName
         super.init(frame: .zero)
         setupConstraints()
-       
+        
     }
     
     required init?(coder: NSCoder) {
@@ -41,7 +40,6 @@ final class MyWorkCardView: UIView {
         label.text = projects
         label.numberOfLines = 1
         label.textAlignment = .center
-//        label.backgroundColor = .gray
         label.textColor = .gray
         label.font = .boldMyriad.size(12)
         self.addSubview(label)
@@ -53,7 +51,6 @@ final class MyWorkCardView: UIView {
         label.text = jobs
         label.numberOfLines = 1
         label.textAlignment = .center
-//        label.backgroundColor = .green
         label.textColor = .gray
         label.font = .boldMyriad.size(12)
         self.addSubview(label)
@@ -101,11 +98,9 @@ final class MyWorkCardView: UIView {
         self.addSubview(searchImage)
         return searchImage
     }()
-    
 }
 
 extension MyWorkCardView {
-    
     func setupConstraints() {
         
         self.layer.cornerRadius = 4
@@ -119,12 +114,11 @@ extension MyWorkCardView {
         
         projectNumberLabel.anchor(top: (self.topAnchor,26))
         projectNumberLabel.centerXAnchor.constraint(equalTo: projectLabel.centerXAnchor).isActive = true
-
+        
         jobNumberLabel.anchor(top: (self.topAnchor,26))
         jobNumberLabel.centerXAnchor.constraint(equalTo: jobLabel.centerXAnchor).isActive = true
-
+        
         searchImageView.anchor(top: (self.topAnchor, 26))
         searchImageView.centerXAnchor.constraint(equalTo: searchLabel.centerXAnchor).isActive = true
-        
     }
 }

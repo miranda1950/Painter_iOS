@@ -31,7 +31,7 @@ final class HomeViewController: UIViewController {
         
         self.view.sendSubviewToBack(backgroundView)
     }
- 
+    
     private  lazy var navBarView: NavBarView = {
         let navView = NavBarView(title: "Welcome back Miran!", subtitle: "Enjoy spraying!")
         view.addSubview(navView)
@@ -76,31 +76,26 @@ final class HomeViewController: UIViewController {
     
     private lazy var firstEventCardView: EventCardView = {
         let cardView = EventCardView(date: Date.now, eventDescription: "New tip for your sprayer available now for little price!", eventImage: UIImage(named: "eventImage"))
-//        view.addSubview(cardView)
         return cardView
     }()
     
     private lazy var secondEventCardView: EventCardView = {
         let cardView = EventCardView(date: Date.now, eventDescription: "Don’t miss The Farbe Conference nearby!", eventImage: UIImage(named: "eventImage"))
-//        view.addSubview(cardView)
         return cardView
     }()
     
     private lazy var thirdEventCardView: EventCardView = {
         let cardView = EventCardView(date: Date.distantFuture, eventDescription: "New tip for your sprayer available now!", eventImage: UIImage(named: "eventImage"))
-//        view.addSubview(cardView)
         return cardView
     }()
     
     private lazy var fourthEventCardView: EventCardView = {
         let cardView = EventCardView(date: Date.distantPast, eventDescription: "Check gun filter on IMPAC 840 HIGH RIDER", eventImage: nil)
-//        view.addSubview(cardView)
         return cardView
     }()
     
     private lazy var fifthEventCardView: EventCardView = {
         let cardView = EventCardView(date: Date.now, eventDescription: "Don’t miss The Farbe Conference nearby!", eventImage: UIImage(named: "eventImage"))
-//        view.addSubview(cardView)
         return cardView
     }()
     
@@ -114,13 +109,14 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController {
     
-   private func setupConstraints() {
+    private func setupConstraints() {
         
         navBarView.anchor(top: (view.safeAreaLayoutGuide.topAnchor, 0),leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor,0 ), size: CGSize(width: 0 ,height: 64))
         
         eventLabel.anchor(top: (navBarView.bottomAnchor, 22), leading: (view.leadingAnchor, 20), size: CGSize(width: 0, height: 28))
         
         filterButton.anchor(top: (navBarView.bottomAnchor, 24), trailing: (view.trailingAnchor, 20), size: CGSize(width: 24, height: 24))
+        
         filterLabel.anchor(top: (navBarView.bottomAnchor,26), trailing: (filterButton.leadingAnchor,11), size: CGSize(width: 0, height: 20))
         
         stackView.anchor(top: (eventLabel.bottomAnchor,16),leading: (view.leadingAnchor,20), trailing: (view.trailingAnchor,20))
@@ -137,8 +133,9 @@ extension HomeViewController {
         self.navigationController?.tabBarController?.tabBar.setShadow(width: 0, height: 0, radius: 14, color: UIColor.black, opacity: 0.1)
     }
     
-    
-   @objc func filterButtonTapped() {
+    @objc func filterButtonTapped() {
         print("filtering...")
     }
 }
+
+

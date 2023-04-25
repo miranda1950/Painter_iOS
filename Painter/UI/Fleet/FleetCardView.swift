@@ -28,7 +28,7 @@ final class FleetCardView: UIView {
     }
     
     private lazy var fleetLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = fleet
         label.textColor = .black
         label.font = .boldMyriad.size(12)
@@ -63,6 +63,7 @@ extension FleetCardView {
     private func setupConstraints() {
         self.backgroundColor = .white
         self.setShadow(width: 0, height: 4, radius: 14, color: UIColor.grayShadow, opacity: 0.3)
+        self.layer.cornerRadius = 4
         
         fleetLabel.anchor(top: (self.topAnchor, 16), leading: (self.leadingAnchor, 16),trailing: (self.trailingAnchor,16), size: CGSize(width: 0, height: 16))
         

@@ -13,7 +13,7 @@ final class NoContentView: UIView {
     private var noJobTitle: String
     private var noJobDescription: String
     private var backImage: UIImage
-
+    
     init(noJobTitle: String, noJobDescription: String, backImage: UIImage) {
         self.noJobTitle = noJobTitle
         self.noJobDescription = noJobDescription
@@ -22,16 +22,16 @@ final class NoContentView: UIView {
         
         setupConstraints()
         
-       
+        
     }
-
+    
     //convenience??
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-        
+    
     private lazy var backgroundImageView: UIImageView = {
-       let imageView = UIImageView()
+        let imageView = UIImageView()
         imageView.image = backImage
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,7 +50,7 @@ final class NoContentView: UIView {
     }()
     
     private lazy var noJobDescriptionLabel: UILabel =  {
-       let label = UILabel()
+        let label = UILabel()
         label.numberOfLines = 3
         label.textColor = .black
         label.text = noJobDescription
@@ -72,6 +72,5 @@ extension NoContentView {
         
         noJobDescriptionLabel.anchor(top: (noJobsLabel.bottomAnchor, 16), size: CGSize(width: 264, height: 72))
         noJobDescriptionLabel.centerXAnchor.constraint(equalTo: backgroundImageView.centerXAnchor).isActive = true
-
     }
 }

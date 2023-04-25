@@ -32,6 +32,8 @@
 		C52C9FEC29E5681D007D616D /* Myriad-Pro-Light-Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52C9FE929E5681C007D616D /* Myriad-Pro-Light-Condensed.ttf */; };
 		C52C9FEF29E56951007D616D /* Fonts+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FEE29E56951007D616D /* Fonts+.swift */; };
 		C53A47B729F130D200F16201 /* FleetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A47B629F130D200F16201 /* FleetCardView.swift */; };
+		C53A47B929F1535A00F16201 /* FleetCardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A47B829F1535A00F16201 /* FleetCardCellView.swift */; };
+		C53A47BB29F15D8400F16201 /* Pumps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A47BA29F15D8400F16201 /* Pumps.swift */; };
 		C545A5E229EFF2D1004B2D82 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A5E129EFF2D1004B2D82 /* EventCardView.swift */; };
 		C5B74F1129E6B88C00163C48 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B74F1029E6B88C00163C48 /* UIView+.swift */; };
 		C5B99C7629ED3BB9006A0F3D /* NoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B99C7529ED3BB9006A0F3D /* NoContentView.swift */; };
@@ -67,6 +69,8 @@
 		C52C9FE929E5681C007D616D /* Myriad-Pro-Light-Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad-Pro-Light-Condensed.ttf"; sourceTree = "<group>"; };
 		C52C9FEE29E56951007D616D /* Fonts+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonts+.swift"; sourceTree = "<group>"; };
 		C53A47B629F130D200F16201 /* FleetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetCardView.swift; sourceTree = "<group>"; };
+		C53A47B829F1535A00F16201 /* FleetCardCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetCardCellView.swift; sourceTree = "<group>"; };
+		C53A47BA29F15D8400F16201 /* Pumps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pumps.swift; sourceTree = "<group>"; };
 		C545A5E129EFF2D1004B2D82 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
 		C5B74F1029E6B88C00163C48 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		C5B99C7529ED3BB9006A0F3D /* NoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoContentView.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 				C52C9FD329E55DF3007D616D /* FleetViewModel.swift */,
 				C52C9FD529E55E00007D616D /* FleetViewController.swift */,
 				C53A47B629F130D200F16201 /* FleetCardView.swift */,
+				C53A47B829F1535A00F16201 /* FleetCardCellView.swift */,
+				C53A47BA29F15D8400F16201 /* Pumps.swift */,
 			);
 			path = Fleet;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 			files = (
 				C52C9FDD29E56036007D616D /* MyWorkViewModel.swift in Sources */,
 				C52C9FCF29E55A78007D616D /* HomeView.swift in Sources */,
+				C53A47B929F1535A00F16201 /* FleetCardCellView.swift in Sources */,
 				C52C9FC329E54D87007D616D /* Coordinator.swift in Sources */,
 				C53A47B729F130D200F16201 /* FleetCardView.swift in Sources */,
 				C5B74F1129E6B88C00163C48 /* UIView+.swift in Sources */,
@@ -299,6 +306,7 @@
 				C52C9FCD29E55A65007D616D /* HomeViewModel.swift in Sources */,
 				C52C9FD229E55DE4007D616D /* FleetCoordinator.swift in Sources */,
 				C503147B29EEE7F5000A3560 /* MyWorkCardView.swift in Sources */,
+				C53A47BB29F15D8400F16201 /* Pumps.swift in Sources */,
 				C52C9FD629E55E00007D616D /* FleetViewController.swift in Sources */,
 				C52C9FC529E54E3E007D616D /* MainCoordinator.swift in Sources */,
 				C52C9FB029E54C00007D616D /* SceneDelegate.swift in Sources */,

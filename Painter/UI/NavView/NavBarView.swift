@@ -73,8 +73,11 @@ extension NavBarView {
     func setupConstraints() {
         
         logoImageView.anchor(top: (self.topAnchor, 12),bottom: (self.bottomAnchor, 12),leading: (self.leadingAnchor, 20), size: CGSize(width: 40, height: 40))
+        
         titleLabel.anchor(top: (self.topAnchor, 10), leading: (logoImageView.trailingAnchor, 16))
+        
         subTitleLabel.anchor(top: (self.topAnchor,34),leading: (logoImageView.trailingAnchor, 16))
+        
         burgerButton.anchor(top: (self.topAnchor, 20), trailing: (self.trailingAnchor, 20))
         
     }

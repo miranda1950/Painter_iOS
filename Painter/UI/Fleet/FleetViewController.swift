@@ -8,7 +8,11 @@
 import Foundation
 import UIKit
 
-final class FleetViewController: UIViewController {
+final class FleetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var dummyPumps = [Pumps]()
+    private var offsetY: CGFloat = 0.0
+    
     private var viewModel: FleetViewModel
     
     init(viewModel: FleetViewModel) {
@@ -23,6 +27,7 @@ final class FleetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        createDummyData()
         setupConstraints()
         setupNavBarAndScreen()
         
@@ -50,7 +55,28 @@ final class FleetViewController: UIViewController {
         view.addSubview(gradView)
         return(gradView)
     }()
-
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(FleetCardCellView.self, forCellReuseIdentifier: "pumpCell")
+        tableView.separatorStyle = .none
+        //??
+        tableView.delegate = self
+        tableView.dataSource = self
+        view.addSubview(tableView)
+        return tableView
+    }()
+    
+    private lazy var addButtton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .primary
+        button.setImage(UIImage(named: "plus"), for: .normal)
+        button.setShadow(width: 0, height: 4, radius: 14, color: .grayShadow, opacity: 0.3)
+        button.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+        button.layer.cornerRadius = 30
+        view.addSubview(button)
+        return button
+    }()
 }
 
 extension FleetViewController {
@@ -71,5 +97,68 @@ extension FleetViewController {
         
         gradientView.anchor(top: (navBarView.bottomAnchor, 28), leading: (view.leadingAnchor,0), trailing: (view.trailingAnchor,0))
         
+        tableView.anchor(top: (fleetCardView.bottomAnchor, 20),bottom: (view.safeAreaLayoutGuide.bottomAnchor,0), leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor, 0))
+        
+        addButtton.anchor(bottom: (view.safeAreaLayoutGuide.bottomAnchor, 12), trailing: (view.safeAreaLayoutGuide.trailingAnchor, 12), size: CGSize(width: 60, height: 60))
+    }
+    
+    func createDummyData() {
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter1", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter2", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter3", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter1", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter2", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter3", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter1", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter2", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter3", impact: "Mighty Impact"))
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dummyPumps.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "pumpCell", for: indexPath) as! FleetCardCellView
+        let product = dummyPumps[indexPath.row]
+        cell.pump = product
+        
+        return cell
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+        print("dragging begins")
+        print("Position:  \(scrollView.contentOffset.x) , \(scrollView.contentOffset.y) ")
+        
+        if scrollView.contentOffset.y >= 0 {
+            offsetY = scrollView.contentOffset.y
+        }
+        else {
+            offsetY = 0
+        }
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let offset = offsetY - scrollView.contentOffset.y
+        
+        if offset <= 0 {
+            UIButton.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
+                self.addButtton.alpha = 0.0
+            }
+        }
+        else {
+            UIButton.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
+                self.addButtton.alpha = 1.0
+            }
+        }
+    }
+    
+    @objc func addButtonTapped() {
+        print("Pump added")
     }
 }
+
+

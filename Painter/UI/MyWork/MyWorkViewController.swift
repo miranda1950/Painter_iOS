@@ -13,7 +13,7 @@ final class MyWorkViewController: UIViewController {
     private var dummyData = "It seems there is no paint work documented, yet. Once you create some jobs, they will appear in this list."
     
     private var viewModel: MyWorkViewModel
-//    private var myWorkView = MyWorkView()
+    
     
     init(viewModel: MyWorkViewModel) {
         self.viewModel = viewModel
@@ -24,14 +24,10 @@ final class MyWorkViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    override func loadView() {
-//        self.view = myWorkView
-//    }
-//    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
- 
+        
         setupConstraints()
         setupNavBarAndScreen()
         self.view.sendSubviewToBack(gradientView)
@@ -41,11 +37,10 @@ final class MyWorkViewController: UIViewController {
     private func setupNavBarAndScreen() {
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-    
+        
         self.navigationController?.tabBarController?.tabBar.setShadow(width: 0, height: 0, radius: 14, color: UIColor.black, opacity: 0.1)
         
         workCardView.setShadow(width: 0, height: 4, radius: 14, color: UIColor.grayShadow, opacity: 0.3)
-
     }
     
     private lazy var noContentView: NoContentView = {
@@ -92,6 +87,6 @@ extension MyWorkViewController {
         workCardView.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
         gradientView.anchor(top: (navBarView.bottomAnchor,0))
- 
+        
     }
 }

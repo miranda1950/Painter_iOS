@@ -24,7 +24,6 @@ final class EventCardView: UIView {
         self.eventDescription = eventDescription
         self.eventImage = eventImage
         super.init(frame: .zero)
-        //enum?
         if let _ = eventImage {
             setupConstraints(value: .withImage)
         }
@@ -40,14 +39,14 @@ final class EventCardView: UIView {
     private lazy var eventImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = eventImage
-         imageView.contentMode = .scaleAspectFill
-         imageView.translatesAutoresizingMaskIntoConstraints = false
-         self.addSubview(imageView)
-         return imageView
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(imageView)
+        return imageView
     }()
     
     private lazy var dateLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         label.text = formatter.string(from: date)
@@ -59,47 +58,49 @@ final class EventCardView: UIView {
     
     private lazy var eventDescriptionLabel: UILabel = {
         let label = UILabel()
-         label.text = eventDescription
+        label.text = eventDescription
         label.font = .regularMyriad.size(18)
         label.textAlignment = .left
-         label.numberOfLines = 2
-         self.addSubview(label)
-         return label
+        label.numberOfLines = 2
+        self.addSubview(label)
+        return label
     }()
 }
-
 
 extension EventCardView {
     
     func setupConstraints(value: ImageCard) {
         switch value {
         case .withImage:
-           constraintsWithImage()
+            constraintsWithImage()
         case .withoutImage:
             constraintsWithoutImage()
         }
     }
     
-        func constraintsWithImage() {
-            self.backgroundColor = .white
-            dateLabel.textColor = .grayLabel
-            self.setShadow(width: 0, height: 4, radius: 14, color: UIColor.grayShadow, opacity: 0.3)
-            self.layer.cornerRadius = 4
+    func constraintsWithImage() {
+        self.backgroundColor = .white
+        dateLabel.textColor = .grayLabel
+        self.setShadow(width: 0, height: 4, radius: 14, color: UIColor.grayShadow, opacity: 0.3)
+        self.layer.cornerRadius = 4
+        
+        self.anchor(size: CGSize(width: 0, height: 84))
+        eventImageView.anchor(top: (self.topAnchor,0),bottom: (self.bottomAnchor,0),leading: (self.leadingAnchor,0),size: CGSize(width: 84, height: 84))
+        dateLabel.anchor(top: (self.topAnchor, 9), leading: (eventImageView.trailingAnchor, 16), size: CGSize(width: 0, height: 16))
+        eventDescriptionLabel.anchor(top: (dateLabel.bottomAnchor,2), leading: (eventImageView.trailingAnchor,16),trailing: (self.trailingAnchor, 16), size: CGSize(width: 0, height: 48))
+    }
     
-            self.anchor(size: CGSize(width: 0, height: 84))
-            eventImageView.anchor(top: (self.topAnchor,0),bottom: (self.bottomAnchor,0),leading: (self.leadingAnchor,0),size: CGSize(width: 84, height: 84))
-            dateLabel.anchor(top: (self.topAnchor, 9), leading: (eventImageView.trailingAnchor, 16), size: CGSize(width: 0, height: 16))
-            eventDescriptionLabel.anchor(top: (dateLabel.bottomAnchor,2), leading: (eventImageView.trailingAnchor,16),trailing: (self.trailingAnchor, 16), size: CGSize(width: 0, height: 48))
-        }
-    
-        func constraintsWithoutImage() {
-            self.backgroundColor = .primary
-            dateLabel.textColor = .black
-            self.setShadow(width: 0, height: 4, radius: 14, color: UIColor.grayShadow, opacity: 0.3)
-            self.layer.cornerRadius = 4
-    
-            self.anchor(size: CGSize(width: 0, height: 64))
-            dateLabel.anchor(top: (self.topAnchor, 12), leading: (self.leadingAnchor, 16), size: CGSize(width: 0, height: 16))
-            eventDescriptionLabel.anchor(top: (dateLabel.bottomAnchor,0), leading: (self.leadingAnchor,16),trailing: (self.trailingAnchor, 16), size: CGSize(width: 0, height: 24))
-        }
+    func constraintsWithoutImage() {
+        
+        self.backgroundColor = .primary
+        dateLabel.textColor = .black
+        self.setShadow(width: 0, height: 4, radius: 14, color: UIColor.grayShadow, opacity: 0.3)
+        self.layer.cornerRadius = 4
+        
+        self.anchor(size: CGSize(width: 0, height: 64))
+        
+        dateLabel.anchor(top: (self.topAnchor, 12), leading: (self.leadingAnchor, 16), size: CGSize(width: 0, height: 16))
+        
+        eventDescriptionLabel.anchor(top: (dateLabel.bottomAnchor,0), leading: (self.leadingAnchor,16),trailing: (self.trailingAnchor, 16), size: CGSize(width: 0, height: 24))
+    }
 }
