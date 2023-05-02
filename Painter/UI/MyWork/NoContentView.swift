@@ -22,7 +22,6 @@ final class NoContentView: UIView {
         
         setupConstraints()
         
-        
     }
     
     //convenience??

@@ -12,15 +12,17 @@ final class FleetCardView: UIView {
     
     private var fleet: String
     private var fleetName: String
-    private var members: String
+    private var members: Int
     
-    init(fleet: String, fleetName: String, members: String) {
+    init(fleet: String, fleetName: String, members: Int) {
         self.fleet = fleet
         self.fleetName = fleetName
         self.members = members
+        
         super.init(frame: .zero)
         
         setupConstraints()
+        fleetMembersCircle(members)
     }
     
     required init?(coder: NSCoder) {
@@ -47,14 +49,13 @@ final class FleetCardView: UIView {
         return label
     }()
     
-    private lazy var membersLabel: UILabel = {
-        let label = UILabel()
-        label.text = members
-        label.textColor = .black
-        label.textAlignment = .left
-        label.backgroundColor = .black
-        self.addSubview(label)
-        return label
+    private lazy var membersStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 10
+        stackView.alignment = .center
+        self.addSubview(stackView)
+        return stackView
     }()
 }
 
@@ -69,6 +70,28 @@ extension FleetCardView {
         
         fleetNameLabel.anchor(top: (fleetLabel.bottomAnchor,4), leading: (self.leadingAnchor, 16),trailing: (self.trailingAnchor, 16),size: CGSize(width: 0, height: 24))
         
-        membersLabel.anchor(top: (fleetNameLabel.bottomAnchor, 8),bottom: (self.bottomAnchor, 16), leading: (self.leadingAnchor, 16), trailing: (self.trailingAnchor,90), size: CGSize(width: 0, height: 20))
+        membersStack.anchor(top: (fleetNameLabel.bottomAnchor, 8), bottom: (self.bottomAnchor, 16), leading: (self.leadingAnchor, 16))
+    }
+    
+    func fleetMembersCircle(_ members: Int) {
+        
+        if members <= 7 {
+            for _ in 0...members - 1 {
+                membersStack.addArrangedSubview(UIImageView(image: UIImage(systemName: "bolt.circle.fill")))
+            }
+        }
+        else {
+            for _ in 0...6 {
+                membersStack.addArrangedSubview(UIImageView(image: UIImage(systemName: "bolt.circle.fill")))
+            }
+            membersStack.addArrangedSubview(getRemainingNumberLabel(members - 7))
+        }
+    }
+    
+    func getRemainingNumberLabel(_ remainingCount: Int) -> UILabel {
+        let label = UILabel()
+        label.textColor = .black
+        label.text = "+\(remainingCount)"
+        return label
     }
 }

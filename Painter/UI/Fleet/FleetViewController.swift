@@ -12,7 +12,6 @@ final class FleetViewController: UIViewController, UITableViewDelegate, UITableV
     
     var dummyPumps = [Pumps]()
     private var offsetY: CGFloat = 0.0
-    
     private var viewModel: FleetViewModel
     
     init(viewModel: FleetViewModel) {
@@ -41,7 +40,7 @@ final class FleetViewController: UIViewController, UITableViewDelegate, UITableV
     }()
     
     private lazy var fleetCardView: FleetCardView = {
-        let fleetCard = FleetCardView(fleet: "FLEET", fleetName: "Wagner Heroes", members: "")
+        let fleetCard = FleetCardView(fleet: "FLEET", fleetName: "Wagner Heroes", members: 9)
         view.addSubview(fleetCard)
         return fleetCard
     }()
@@ -60,6 +59,7 @@ final class FleetViewController: UIViewController, UITableViewDelegate, UITableV
         let tableView = UITableView()
         tableView.register(FleetCardCellView.self, forCellReuseIdentifier: "pumpCell")
         tableView.separatorStyle = .none
+        tableView.backgroundColor = .white
         //??
         tableView.delegate = self
         tableView.dataSource = self
@@ -91,28 +91,30 @@ extension FleetViewController {
     
     private func setupConstraints() {
         
+        
         navBarView.anchor(top: (view.safeAreaLayoutGuide.topAnchor, 0),leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor,0 ), size: CGSize(width: 0 ,height: 64))
         
         fleetCardView.anchor(top: (navBarView.bottomAnchor, 16), leading: (view.leadingAnchor,20), trailing: (view.trailingAnchor, 20))
         
         gradientView.anchor(top: (navBarView.bottomAnchor, 28), leading: (view.leadingAnchor,0), trailing: (view.trailingAnchor,0))
         
-        tableView.anchor(top: (fleetCardView.bottomAnchor, 20),bottom: (view.safeAreaLayoutGuide.bottomAnchor,0), leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor, 0))
+        tableView.anchor(top: (fleetCardView.bottomAnchor, 0),bottom: (view.safeAreaLayoutGuide.bottomAnchor,0), leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor, 0))
+        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
         addButtton.anchor(bottom: (view.safeAreaLayoutGuide.bottomAnchor, 12), trailing: (view.safeAreaLayoutGuide.trailingAnchor, 12), size: CGSize(width: 60, height: 60))
     }
     
     func createDummyData() {
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter1", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter2", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter3", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter1", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter2", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter3", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter1", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter2", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter3", impact: "Mighty Impact"))
         
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter® 90", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "Control_Pro")!, name: "ControlPro® 350", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "ProSpray 3.25 Cart", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter® 90", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "Control_Pro")!, name: "ProSpray 3.31 Cart", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter3", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "Control_Pro")!, name: "PowerPainter® 90", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "Control_Pro")!, name: "ProSpray 3.31 Cart", impact: "Mighty Impact"))
+        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter® 90", impact: "Mighty Impact"))
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -122,6 +124,7 @@ extension FleetViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pumpCell", for: indexPath) as! FleetCardCellView
         let product = dummyPumps[indexPath.row]
+        cell.selectionStyle = .none
         cell.pump = product
         
         return cell
@@ -144,14 +147,20 @@ extension FleetViewController {
         
         let offset = offsetY - scrollView.contentOffset.y
         
-        if offset <= 0 {
-            UIButton.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
+        if offset <= -1 {
+            UIButton.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
                 self.addButtton.alpha = 0.0
             }
+            UIButton.animate(withDuration: 0.5, delay: 0) { [self] in
+                self.addButtton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            }
         }
-        else {
-            UIButton.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
+        if offset > 0 {
+            UIButton.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
                 self.addButtton.alpha = 1.0
+            }
+            UIButton.animate(withDuration: 0.5, delay: 0) { [self] in
+                self.addButtton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             }
         }
     }

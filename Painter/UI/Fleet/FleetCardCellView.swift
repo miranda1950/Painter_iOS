@@ -72,21 +72,16 @@ extension FleetCardCellView {
     
     func setupConstraints() {
         
+//        self.selectionStyle = .none
         self.backgroundColor = .white
         
         spacingView.anchor(top: (self.topAnchor,8), bottom: (self.bottomAnchor, 8), leading: (self.leadingAnchor, 20), trailing: (self.trailingAnchor, 20))
         
-        pumpImageView.anchor(top: (spacingView.topAnchor, 0), bottom: (spacingView.bottomAnchor, 0), leading: (spacingView.leadingAnchor, 0), size: CGSize(width: 84, height: 0))
+        pumpImageView.anchor(top: (spacingView.topAnchor, 0), bottom: (spacingView.bottomAnchor, 0), leading: (spacingView.leadingAnchor, 0), size: CGSize(width: 84, height: 84))
         
         nameLabel.anchor(top: (spacingView.topAnchor, 16), leading: (pumpImageView.trailingAnchor, 34),trailing: (spacingView.trailingAnchor,34), size: CGSize(width: 0, height: 24))
         
         impactLabel.anchor(top: (nameLabel.bottomAnchor, 4), leading: (pumpImageView.trailingAnchor, 16), trailing: (spacingView.trailingAnchor,16), size: CGSize(width: 0, height: 24))
         
-        
-//        pumpImageView.anchor(top: (self.topAnchor,0),bottom: (self.bottomAnchor,0), leading: (self.leadingAnchor,0), size: CGSize(width: 84, height: 84))
-//
-//        nameLabel.anchor(top: (self.topAnchor, 16),leading: (self.leadingAnchor, 118), trailing: (self.trailingAnchor,34), size: CGSize(width: 0, height: 24))
-//
-//        impactLabel.anchor(top: (nameLabel.bottomAnchor, 4),leading: (self.leadingAnchor, 100), trailing: (self.trailingAnchor, 16), size: CGSize(width: 0, height: 24))
     }
 }

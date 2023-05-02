@@ -10,7 +10,7 @@ import UIKit
 
 final class HomeView: UIView {
     
-    //explenation
+    //explanation
     override init(frame: CGRect) {
         super.init(frame: frame)
     }

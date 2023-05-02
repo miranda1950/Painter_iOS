@@ -48,5 +48,4 @@ extension UIView {
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOpacity = opacity
     }
-
 }
