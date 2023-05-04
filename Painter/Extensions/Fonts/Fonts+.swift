@@ -16,6 +16,8 @@ extension UIFont {
     
     static let test = Font.boldMyriad(size: 32)
     
+    
+    
     static func printFonts() {
         let fontFamilyNames = UIFont.familyNames
         for familyName in fontFamilyNames {

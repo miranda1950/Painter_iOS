@@ -21,8 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if mainCoordinator == nil {
             mainCoordinator = MainCoordinator()
         }
-        window?.rootViewController = mainCoordinator?.start()
-        window?.makeKeyAndVisible()
+        window!.rootViewController = mainCoordinator?.start()
+        window!.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

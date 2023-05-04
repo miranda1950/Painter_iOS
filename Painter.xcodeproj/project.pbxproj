@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C503147B29EEE7F5000A3560 /* MyWorkCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C503147A29EEE7F5000A3560 /* MyWorkCardView.swift */; };
 		C52C9FAE29E54C00007D616D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FAD29E54C00007D616D /* AppDelegate.swift */; };
 		C52C9FB029E54C00007D616D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FAF29E54C00007D616D /* SceneDelegate.swift */; };
 		C52C9FB229E54C00007D616D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FB129E54C00007D616D /* ViewController.swift */; };
@@ -22,19 +23,28 @@
 		C52C9FD229E55DE4007D616D /* FleetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FD129E55DE4007D616D /* FleetCoordinator.swift */; };
 		C52C9FD429E55DF3007D616D /* FleetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FD329E55DF3007D616D /* FleetViewModel.swift */; };
 		C52C9FD629E55E00007D616D /* FleetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FD529E55E00007D616D /* FleetViewController.swift */; };
-		C52C9FD829E55E09007D616D /* FleetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FD729E55E09007D616D /* FleetView.swift */; };
 		C52C9FDB29E56029007D616D /* MyWorkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FDA29E56029007D616D /* MyWorkCoordinator.swift */; };
 		C52C9FDD29E56036007D616D /* MyWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FDC29E56036007D616D /* MyWorkViewModel.swift */; };
 		C52C9FDF29E56048007D616D /* MyWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FDE29E56048007D616D /* MyWorkViewController.swift */; };
-		C52C9FE129E56056007D616D /* MyWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FE029E56056007D616D /* MyWorkView.swift */; };
 		C52C9FE429E56592007D616D /* Colors+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FE329E56592007D616D /* Colors+.swift */; };
 		C52C9FEA29E5681D007D616D /* Myriad-Pro-Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52C9FE729E5681C007D616D /* Myriad-Pro-Condensed.ttf */; };
 		C52C9FEB29E5681D007D616D /* Myriad-Pro-Bold-Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52C9FE829E5681C007D616D /* Myriad-Pro-Bold-Condensed.ttf */; };
 		C52C9FEC29E5681D007D616D /* Myriad-Pro-Light-Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52C9FE929E5681C007D616D /* Myriad-Pro-Light-Condensed.ttf */; };
 		C52C9FEF29E56951007D616D /* Fonts+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C9FEE29E56951007D616D /* Fonts+.swift */; };
+		C53A47B729F130D200F16201 /* FleetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A47B629F130D200F16201 /* FleetCardView.swift */; };
+		C53A47B929F1535A00F16201 /* FleetCardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A47B829F1535A00F16201 /* FleetCardCellView.swift */; };
+		C53A47BB29F15D8400F16201 /* Pumps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A47BA29F15D8400F16201 /* Pumps.swift */; };
+		C545A5E229EFF2D1004B2D82 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A5E129EFF2D1004B2D82 /* EventCardView.swift */; };
+		C5601D802A00FF6F0032CC0E /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5601D7F2A00FF6F0032CC0E /* EventCard.swift */; };
+		C5B0112D29FA93CD00E8BA1D /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0112C29FA93CD00E8BA1D /* HamburgerView.swift */; };
+		C5B74F1129E6B88C00163C48 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B74F1029E6B88C00163C48 /* UIView+.swift */; };
+		C5B99C7629ED3BB9006A0F3D /* NoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B99C7529ED3BB9006A0F3D /* NoContentView.swift */; };
+		C5B99C7829ED5A7F006A0F3D /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B99C7729ED5A7F006A0F3D /* UILabel+.swift */; };
+		C5B99C7A29ED983E006A0F3D /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B99C7929ED983E006A0F3D /* NavBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C503147A29EEE7F5000A3560 /* MyWorkCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkCardView.swift; sourceTree = "<group>"; };
 		C52C9FAA29E54C00007D616D /* Painter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Painter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C52C9FAD29E54C00007D616D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C52C9FAF29E54C00007D616D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,16 +62,24 @@
 		C52C9FD129E55DE4007D616D /* FleetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetCoordinator.swift; sourceTree = "<group>"; };
 		C52C9FD329E55DF3007D616D /* FleetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetViewModel.swift; sourceTree = "<group>"; };
 		C52C9FD529E55E00007D616D /* FleetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetViewController.swift; sourceTree = "<group>"; };
-		C52C9FD729E55E09007D616D /* FleetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetView.swift; sourceTree = "<group>"; };
 		C52C9FDA29E56029007D616D /* MyWorkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkCoordinator.swift; sourceTree = "<group>"; };
 		C52C9FDC29E56036007D616D /* MyWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkViewModel.swift; sourceTree = "<group>"; };
 		C52C9FDE29E56048007D616D /* MyWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkViewController.swift; sourceTree = "<group>"; };
-		C52C9FE029E56056007D616D /* MyWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkView.swift; sourceTree = "<group>"; };
 		C52C9FE329E56592007D616D /* Colors+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+.swift"; sourceTree = "<group>"; };
 		C52C9FE729E5681C007D616D /* Myriad-Pro-Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad-Pro-Condensed.ttf"; sourceTree = "<group>"; };
 		C52C9FE829E5681C007D616D /* Myriad-Pro-Bold-Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad-Pro-Bold-Condensed.ttf"; sourceTree = "<group>"; };
 		C52C9FE929E5681C007D616D /* Myriad-Pro-Light-Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad-Pro-Light-Condensed.ttf"; sourceTree = "<group>"; };
 		C52C9FEE29E56951007D616D /* Fonts+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonts+.swift"; sourceTree = "<group>"; };
+		C53A47B629F130D200F16201 /* FleetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetCardView.swift; sourceTree = "<group>"; };
+		C53A47B829F1535A00F16201 /* FleetCardCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetCardCellView.swift; sourceTree = "<group>"; };
+		C53A47BA29F15D8400F16201 /* Pumps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pumps.swift; sourceTree = "<group>"; };
+		C545A5E129EFF2D1004B2D82 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
+		C5601D7F2A00FF6F0032CC0E /* EventCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCard.swift; sourceTree = "<group>"; };
+		C5B0112C29FA93CD00E8BA1D /* HamburgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
+		C5B74F1029E6B88C00163C48 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		C5B99C7529ED3BB9006A0F3D /* NoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoContentView.swift; sourceTree = "<group>"; };
+		C5B99C7729ED5A7F006A0F3D /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		C5B99C7929ED983E006A0F3D /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +138,7 @@
 		C52C9FC629E55A28007D616D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C5B0112B29FA93A700E8BA1D /* CommonViews */,
 				C52C9FD929E56016007D616D /* MyWork */,
 				C52C9FD029E55DD4007D616D /* Fleet */,
 				C52C9FC729E55A31007D616D /* Home */,
@@ -134,6 +153,8 @@
 				C52C9FCA29E55A59007D616D /* HomeViewController.swift */,
 				C52C9FCC29E55A65007D616D /* HomeViewModel.swift */,
 				C52C9FCE29E55A78007D616D /* HomeView.swift */,
+				C545A5E129EFF2D1004B2D82 /* EventCardView.swift */,
+				C5601D7F2A00FF6F0032CC0E /* EventCard.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -144,7 +165,9 @@
 				C52C9FD129E55DE4007D616D /* FleetCoordinator.swift */,
 				C52C9FD329E55DF3007D616D /* FleetViewModel.swift */,
 				C52C9FD529E55E00007D616D /* FleetViewController.swift */,
-				C52C9FD729E55E09007D616D /* FleetView.swift */,
+				C53A47B629F130D200F16201 /* FleetCardView.swift */,
+				C53A47B829F1535A00F16201 /* FleetCardCellView.swift */,
+				C53A47BA29F15D8400F16201 /* Pumps.swift */,
 			);
 			path = Fleet;
 			sourceTree = "<group>";
@@ -155,7 +178,8 @@
 				C52C9FDA29E56029007D616D /* MyWorkCoordinator.swift */,
 				C52C9FDC29E56036007D616D /* MyWorkViewModel.swift */,
 				C52C9FDE29E56048007D616D /* MyWorkViewController.swift */,
-				C52C9FE029E56056007D616D /* MyWorkView.swift */,
+				C503147A29EEE7F5000A3560 /* MyWorkCardView.swift */,
+				C5B99C7529ED3BB9006A0F3D /* NoContentView.swift */,
 			);
 			path = MyWork;
 			sourceTree = "<group>";
@@ -165,6 +189,8 @@
 			children = (
 				C52C9FE529E56666007D616D /* Fonts */,
 				C52C9FE329E56592007D616D /* Colors+.swift */,
+				C5B74F1029E6B88C00163C48 /* UIView+.swift */,
+				C5B99C7729ED5A7F006A0F3D /* UILabel+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -186,6 +212,15 @@
 				C52C9FE929E5681C007D616D /* Myriad-Pro-Light-Condensed.ttf */,
 			);
 			path = FontFiles;
+			sourceTree = "<group>";
+		};
+		C5B0112B29FA93A700E8BA1D /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				C5B99C7929ED983E006A0F3D /* NavBarView.swift */,
+				C5B0112C29FA93CD00E8BA1D /* HamburgerView.swift */,
+			);
+			path = CommonViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,21 +299,30 @@
 			files = (
 				C52C9FDD29E56036007D616D /* MyWorkViewModel.swift in Sources */,
 				C52C9FCF29E55A78007D616D /* HomeView.swift in Sources */,
-				C52C9FD829E55E09007D616D /* FleetView.swift in Sources */,
+				C5601D802A00FF6F0032CC0E /* EventCard.swift in Sources */,
+				C53A47B929F1535A00F16201 /* FleetCardCellView.swift in Sources */,
 				C52C9FC329E54D87007D616D /* Coordinator.swift in Sources */,
+				C53A47B729F130D200F16201 /* FleetCardView.swift in Sources */,
+				C5B74F1129E6B88C00163C48 /* UIView+.swift in Sources */,
 				C52C9FB229E54C00007D616D /* ViewController.swift in Sources */,
 				C52C9FD429E55DF3007D616D /* FleetViewModel.swift in Sources */,
+				C5B99C7A29ED983E006A0F3D /* NavBarView.swift in Sources */,
+				C5B99C7629ED3BB9006A0F3D /* NoContentView.swift in Sources */,
+				C5B99C7829ED5A7F006A0F3D /* UILabel+.swift in Sources */,
 				C52C9FAE29E54C00007D616D /* AppDelegate.swift in Sources */,
 				C52C9FCD29E55A65007D616D /* HomeViewModel.swift in Sources */,
 				C52C9FD229E55DE4007D616D /* FleetCoordinator.swift in Sources */,
+				C503147B29EEE7F5000A3560 /* MyWorkCardView.swift in Sources */,
+				C53A47BB29F15D8400F16201 /* Pumps.swift in Sources */,
 				C52C9FD629E55E00007D616D /* FleetViewController.swift in Sources */,
+				C5B0112D29FA93CD00E8BA1D /* HamburgerView.swift in Sources */,
 				C52C9FC529E54E3E007D616D /* MainCoordinator.swift in Sources */,
 				C52C9FB029E54C00007D616D /* SceneDelegate.swift in Sources */,
 				C52C9FCB29E55A59007D616D /* HomeViewController.swift in Sources */,
-				C52C9FE129E56056007D616D /* MyWorkView.swift in Sources */,
 				C52C9FDF29E56048007D616D /* MyWorkViewController.swift in Sources */,
 				C52C9FEF29E56951007D616D /* Fonts+.swift in Sources */,
 				C52C9FE429E56592007D616D /* Colors+.swift in Sources */,
+				C545A5E229EFF2D1004B2D82 /* EventCardView.swift in Sources */,
 				C52C9FC929E55A40007D616D /* HomeCoordinator.swift in Sources */,
 				C52C9FDB29E56029007D616D /* MyWorkCoordinator.swift in Sources */,
 			);

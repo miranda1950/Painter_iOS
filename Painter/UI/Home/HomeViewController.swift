@@ -26,21 +26,123 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.addEvents()
+        setupConstraints()
         setupNavBarAndScreen()
-        let testLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        testLabel.text = "Home View"
-        testLabel.center = CGPoint(x: 160, y: 285)
-        testLabel.textAlignment = .center
-        testLabel.textColor = .primary
-        testLabel.font =  .test
         
-        view.addSubview(testLabel)
+        self.view.sendSubviewToBack(backgroundView)
+        
+        for event in viewModel.events {
+            let cardViews = EventCardView(date: event.date, eventDescription: event.eventDescription, eventImage: event.eventImage)
+            stackView.addArrangedSubview(cardViews)
+        }
+    }
+    
+    private  lazy var navBarView: NavBarView = {
+        let navView = NavBarView(title: "Welcome back Miran!", subtitle: "Enjoy spraying!")
+        view.addSubview(navView)
+        return navView
+    }()
+    
+    private lazy var eventLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Events"
+        label.textColor = .black
+        label.font = .boldMyriad.size(24)
+        view.addSubview(label)
+        return label
+    }()
+    
+    private lazy var filterButton: UIButton = {
+        let filterButton = UIButton()
+        filterButton.setImage(UIImage(named: "filter"), for: .normal)
+        filterButton.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
+        view.addSubview(filterButton)
+        return filterButton
+        
+    }()
+    
+    private lazy var filterLabel: UILabel = {
+        let label = UILabel()
+        label.text = "FILTER"
+        label.textColor = .black
+        label.font = .boldMyriad.size(14)
+        view.addSubview(label)
+        return label
+    }()
+    
+    private lazy var stackView: UIStackView = {
+//        let verticalStackView = UIStackView(arrangedSubviews: [firstEventCardView,secondEventCardView, thirdEventCardView, fourthEventCardView, fifthEventCardView])
+        let verticalStackView = UIStackView()
+        verticalStackView.axis = .vertical
+        verticalStackView.spacing = 16
+        view.addSubview(verticalStackView)
+        return verticalStackView
+        
+    }()
+    
+//    private lazy var firstEventCardView: EventCardView = {
+//        let cardView = EventCardView(date: Date.now, eventDescription: "New tip for your sprayer available now for little price!", eventImage: UIImage(named: "eventImage"))
+//        return cardView
+//    }()
+//
+//    private lazy var secondEventCardView: EventCardView = {
+//        let cardView = EventCardView(date: Date.now, eventDescription: "Don’t miss The Farbe Conference nearby!", eventImage: UIImage(named: "eventImage"))
+//        return cardView
+//    }()
+//
+//    private lazy var thirdEventCardView: EventCardView = {
+//        let cardView = EventCardView(date: Date.distantFuture, eventDescription: "New tip for your sprayer available now!", eventImage: UIImage(named: "eventImage"))
+//        return cardView
+//    }()
+//
+//    private lazy var fourthEventCardView: EventCardView = {
+//        let cardView = EventCardView(date: Date.distantPast, eventDescription: "Check gun filter on IMPAC 840 HIGH RIDER", eventImage: nil)
+//        return cardView
+//    }()
+//
+//    private lazy var fifthEventCardView: EventCardView = {
+//        let cardView = EventCardView(date: Date.now, eventDescription: "Don’t miss The Farbe Conference nearby!", eventImage: UIImage(named: "eventImage"))
+//        return cardView
+//    }()
+    
+    private lazy var backgroundView: UIView = {
+        let backView = UIView()
+        backView.backgroundColor = .paleGray
+        view.addSubview(backView)
+        return(backView)
+    }()
+}
+
+extension HomeViewController {
+    
+    private func setupConstraints() {
+        
+        navBarView.anchor(top: (view.safeAreaLayoutGuide.topAnchor, 0),leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor,0 ), size: CGSize(width: 0 ,height: 64))
+        
+        eventLabel.anchor(top: (navBarView.bottomAnchor, 22), leading: (view.leadingAnchor, 20), size: CGSize(width: 0, height: 28))
+        
+        filterButton.anchor(top: (navBarView.bottomAnchor, 24), trailing: (view.trailingAnchor, 20), size: CGSize(width: 24, height: 24))
+        
+        filterLabel.anchor(top: (navBarView.bottomAnchor,26), trailing: (filterButton.leadingAnchor,11), size: CGSize(width: 0, height: 20))
+        
+        stackView.anchor(top: (eventLabel.bottomAnchor,16),leading: (view.leadingAnchor,20), trailing: (view.trailingAnchor,20))
+        
+        backgroundView.anchor(top: (navBarView.bottomAnchor, 0), bottom: (view.safeAreaLayoutGuide.bottomAnchor,0),leading: (view.leadingAnchor,0), trailing: (view.trailingAnchor,0))
         
     }
     
     private func setupNavBarAndScreen() {
         view.backgroundColor = .white
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        self.navigationController?.tabBarController?.tabBar.setShadow(width: 0, height: 0, radius: 14, color: UIColor.black, opacity: 0.1)
     }
     
-    
+    @objc func filterButtonTapped() {
+        print("filtering...")
+    }
 }
+
+

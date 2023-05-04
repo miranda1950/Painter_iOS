@@ -1,5 +1,5 @@
 //
-//  FleetView.swift
+//  HomeView.swift
 //  Painter
 //
 //  Created by COBE on 11.04.2023..
@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 
-final class FleetView: UIView {
+final class HomeView: UIView {
     
+    //explanation
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
