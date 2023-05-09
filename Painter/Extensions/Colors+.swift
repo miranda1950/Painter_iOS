@@ -12,6 +12,7 @@ extension UIColor {
     static let primary = rgb(255, 203, 0)
     
     static let gray = rgb(144,144,144)
+    static let grayBorder = rgb(228, 228, 228)
     
     static let grayShadow = rgb(166, 179, 194)
     static let paleGray = rgb(242, 242, 242)
@@ -19,6 +20,8 @@ extension UIColor {
     
     static let gradient1 = rgb(0, 0, 0).withAlphaComponent(0)
     static let gradient2 = rgb(0, 0, 0).withAlphaComponent(0.1)
+    
+    static let asterixColor = rgb(175, 17, 58)
 }
 
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct EventCard {
+struct Events {
     var date: Date
     var eventDescription: String
     var eventImage: UIImage?

@@ -91,7 +91,6 @@ extension FleetViewController {
     
     private func setupConstraints() {
         
-        
         navBarView.anchor(top: (view.safeAreaLayoutGuide.topAnchor, 0),leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor,0 ), size: CGSize(width: 0 ,height: 64))
         
         fleetCardView.anchor(top: (navBarView.bottomAnchor, 16), leading: (view.leadingAnchor,20), trailing: (view.trailingAnchor, 20))
@@ -148,18 +147,18 @@ extension FleetViewController {
         let offset = offsetY - scrollView.contentOffset.y
         
         if offset <= -1 {
-            UIButton.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
+            UIButton.animate(withDuration: AnimationsConstants.durationConstans, delay: 0, options: .curveEaseIn) {
                 self.addButtton.alpha = 0.0
             }
-            UIButton.animate(withDuration: 0.5, delay: 0) { [self] in
+            UIButton.animate(withDuration: AnimationsConstants.durationConstans, delay: 0) { [self] in
                 self.addButtton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             }
         }
         if offset > 0 {
-            UIButton.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
+            UIButton.animate(withDuration: AnimationsConstants.durationConstans, delay: 0, options: .curveEaseIn) {
                 self.addButtton.alpha = 1.0
             }
-            UIButton.animate(withDuration: 0.5, delay: 0) { [self] in
+            UIButton.animate(withDuration: AnimationsConstants.durationConstans, delay: 0) { [self] in
                 self.addButtton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             }
         }
@@ -170,4 +169,7 @@ extension FleetViewController {
     }
 }
 
+enum AnimationsConstants {
+    static let durationConstans = 0.3
+}
 
