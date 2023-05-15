@@ -21,6 +21,12 @@ final class AddPumpModalViewController: UIViewController {
         view.addSubview(modal)
         return modal
     }()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        addModal.animateShowDimmedView()
+        addModal.animatePresentContainer()
+        addModal.setupPanGesture()
+    }
 }
 
 extension AddPumpModalViewController {
