@@ -72,7 +72,7 @@ extension FleetCardCellView {
     
     func setupConstraints() {
         
-//        self.selectionStyle = .none
+
         self.backgroundColor = .white
         
         spacingView.anchor(top: (self.topAnchor,8), bottom: (self.bottomAnchor, 8), leading: (self.leadingAnchor, 20), trailing: (self.trailingAnchor, 20))

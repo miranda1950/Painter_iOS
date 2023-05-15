@@ -7,16 +7,13 @@
 
 import UIKit
 
-final class TestViewController: UIViewController, UITextFieldDelegate {
+final class TestViewController: UIViewController {
     
     private var viewModel: TestViewModel
-    
-    var txtName: UITextField?
     
     init(viewModel: TestViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        
     }
     
     required init?(coder: NSCoder) {
@@ -27,6 +24,7 @@ final class TestViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         
+        addCallbacks()
         setupNavBarAndScreen()
         setupConstraints()
     }
@@ -36,26 +34,24 @@ final class TestViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(navView)
         return navView
     }()
-
+    
     private lazy var textFieldView: TextFieldView = {
-        let textView = TextFieldView(fieldName: "Label", isMandatory: true)
+        let textView = TextFieldView(fieldName: "Label", isMandatory: true, iconRight: nil, iconLeft: nil)
         view.addSubview(textView)
         return textView
     }()
     
-    private lazy var textField: UITextField = {
-       let textField = UITextField()
-       textField.contentVerticalAlignment = .center
-       textField.delegate = self
-       textField.textColor = .black
-       textField.layer.borderColor = UIColor.grayBorder.cgColor
-       textField.layer.borderWidth = 1
-        textField.isUserInteractionEnabled = true
-       textField.translatesAutoresizingMaskIntoConstraints = false
-       textField.font = .regularMyriad.size(18)
-       view.addSubview(textField)
-       return textField
-   }()
+    private lazy var secondTextField: TextFieldView = {
+        let textView = TextFieldView(fieldName: "Label", isMandatory: false,iconRight: nil, iconLeft: nil)
+        view.addSubview(textView)
+        return textView
+    }()
+    
+    private lazy var thirdTextField: TextFieldView = {
+        let textView = TextFieldView(fieldName: "Label", isMandatory: true, iconRight: UIImage(named: "icon-right"), iconLeft: UIImage(named: "search"))
+        view.addSubview(textView)
+        return textView
+    }()
 }
 
 extension TestViewController {
@@ -65,14 +61,23 @@ extension TestViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         self.navigationController?.tabBarController?.tabBar.setShadow(width: 0, height: 0, radius: 14, color: UIColor.black, opacity: 0.1)
-
     }
     
     private func setupConstraints() {
         navBarView.anchor(top: (view.safeAreaLayoutGuide.topAnchor, 0),leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor,0 ), size: CGSize(width: 0 ,height: 64))
-
-        textFieldView.anchor(top: (navBarView.bottomAnchor, 20), leading: (view.leadingAnchor, 20), trailing: (view.trailingAnchor, 20))
-
-        textField.anchor(top: (textFieldView.bottomAnchor, 80), leading: (view.leadingAnchor, 20), trailing: (view.trailingAnchor, 20))
+        
+        textFieldView.anchor(top: (navBarView.bottomAnchor, 20), leading: (view.leadingAnchor, 20), trailing: (view.trailingAnchor, 20), size: CGSize(width: 0, height: 50))
+        
+        secondTextField.anchor(top: (textFieldView.bottomAnchor, 40), leading: (view.leadingAnchor, 20), trailing: (view.trailingAnchor, 20), size: CGSize(width: 0, height: 48))
+        
+        thirdTextField.anchor(top: (secondTextField.bottomAnchor, 40), leading: (view.leadingAnchor, 20), trailing: (view.trailingAnchor, 20), size: CGSize(width: 0, height: 48))
+        
+    }
+    
+    private func addCallbacks() {
+        
+        thirdTextField.popUpModel = { [weak self]  in
+            self?.viewModel.popUpModel?()
+        }
     }
 }

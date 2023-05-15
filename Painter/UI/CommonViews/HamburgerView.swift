@@ -13,7 +13,7 @@ final class HamburgerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupConstraints()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -60,7 +60,7 @@ final class HamburgerView: UIView {
 }
 
 extension HamburgerView {
-    func setupConstraints() {
+    func setConstraints() {
         accountImageView.anchor(top: (self.topAnchor, 40), leading: (self.leadingAnchor, 20))
         accountLabel.anchor(top: (self.topAnchor, 60), leading: (accountImageView.trailingAnchor, 20))
         FAQLabel.anchor(top: (accountLabel.bottomAnchor, 20), leading: (self.leadingAnchor, 10))

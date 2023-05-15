@@ -60,7 +60,6 @@ final class FleetViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.register(FleetCardCellView.self, forCellReuseIdentifier: "pumpCell")
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
-        //??
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
@@ -165,7 +164,7 @@ extension FleetViewController {
     }
     
     @objc func addButtonTapped() {
-        print("Pump added")
+        viewModel.showAddModal?()
     }
 }
 

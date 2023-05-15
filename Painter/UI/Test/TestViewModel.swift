@@ -9,4 +9,6 @@ import UIKit
 
 final class TestViewModel {
     
+    var popUpModel: (()->Void)?
+    
 }

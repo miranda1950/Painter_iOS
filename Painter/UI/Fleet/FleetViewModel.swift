@@ -10,4 +10,6 @@ import UIKit
 
 final class FleetViewModel {
     
+    var showAddModal: (()->Void)?
 }
+

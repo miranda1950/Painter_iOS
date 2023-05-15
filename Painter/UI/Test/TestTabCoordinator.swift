@@ -20,8 +20,17 @@ final class TestTabCoordinator: Coordinator {
         let vc = TestViewController(viewModel: vm)
         
         vc.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Subtract"), selectedImage: UIImage(named: "Subtract"))
+        
+        vm.popUpModel = { [weak self] in
+            self?.showPopUp()
+        }
         navigationController = UINavigationController(rootViewController: vc)
         return navigationController
     }
     
+    private func showPopUp() {
+        let vc = PopUpModalViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        navigationController.present(vc, animated: false)
+    }
 }
