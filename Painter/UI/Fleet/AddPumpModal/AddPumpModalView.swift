@@ -8,6 +8,7 @@
 import UIKit
 
 final class AddPumpModalViewController: UIViewController {
+    var onConfirmTapped: ((String) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ final class AddPumpModalViewController: UIViewController {
     }()
     
     override func viewDidAppear(_ animated: Bool) {
+        
         addModal.animateShowDimmedView()
         addModal.animatePresentContainer()
         addModal.setupPanGesture()
@@ -37,6 +39,11 @@ extension AddPumpModalViewController {
     
     private func addCallbacks() {
         addModal.onDismissed = { [weak self] in
+            self?.dismiss(animated: false)
+        }
+        
+        addModal.onConfirmTapped = { [weak self] text in
+            self?.onConfirmTapped?(text)
             self?.dismiss(animated: false)
         }
     }

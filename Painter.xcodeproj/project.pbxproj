@@ -44,7 +44,7 @@
 		C57ECB7D2A03AC0B00AE329A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ECB7C2A03AC0B00AE329A /* TestViewController.swift */; };
 		C57ECB7F2A03AC1C00AE329A /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ECB7E2A03AC1C00AE329A /* TestViewModel.swift */; };
 		C57ECB812A03AEB200AE329A /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ECB802A03AEB200AE329A /* TextFieldView.swift */; };
-		C5B0112D29FA93CD00E8BA1D /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0112C29FA93CD00E8BA1D /* HamburgerView.swift */; };
+		C5B0112D29FA93CD00E8BA1D /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0112C29FA93CD00E8BA1D /* HamburgerViewController.swift */; };
 		C5B06BB72A0E732C00E0E6E1 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B06BB62A0E732C00E0E6E1 /* UITextField+.swift */; };
 		C5B74F1129E6B88C00163C48 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B74F1029E6B88C00163C48 /* UIView+.swift */; };
 		C5B99C7629ED3BB9006A0F3D /* NoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B99C7529ED3BB9006A0F3D /* NoContentView.swift */; };
@@ -92,7 +92,7 @@
 		C57ECB7C2A03AC0B00AE329A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		C57ECB7E2A03AC1C00AE329A /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		C57ECB802A03AEB200AE329A /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
-		C5B0112C29FA93CD00E8BA1D /* HamburgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
+		C5B0112C29FA93CD00E8BA1D /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		C5B06BB62A0E732C00E0E6E1 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		C5B74F1029E6B88C00163C48 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		C5B99C7529ED3BB9006A0F3D /* NoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoContentView.swift; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				C5B99C7929ED983E006A0F3D /* NavBarView.swift */,
-				C5B0112C29FA93CD00E8BA1D /* HamburgerView.swift */,
+				C5B0112C29FA93CD00E8BA1D /* HamburgerViewController.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -373,7 +373,7 @@
 				C57ECB7B2A03ABFD00AE329A /* TestTabCoordinator.swift in Sources */,
 				C57ECB812A03AEB200AE329A /* TextFieldView.swift in Sources */,
 				C52C9FD629E55E00007D616D /* FleetViewController.swift in Sources */,
-				C5B0112D29FA93CD00E8BA1D /* HamburgerView.swift in Sources */,
+				C5B0112D29FA93CD00E8BA1D /* HamburgerViewController.swift in Sources */,
 				C52C9FC529E54E3E007D616D /* MainCoordinator.swift in Sources */,
 				C57ECB7F2A03AC1C00AE329A /* TestViewModel.swift in Sources */,
 				C52C9FB029E54C00007D616D /* SceneDelegate.swift in Sources */,

@@ -30,6 +30,7 @@ final class MyWorkViewController: UIViewController {
         
         setupConstraints()
         setupNavBarAndScreen()
+        addCallbacks()
         self.view.sendSubviewToBack(gradientView)
         
     }
@@ -73,12 +74,7 @@ final class MyWorkViewController: UIViewController {
         return(gradView)
     }()
     
-    private lazy var sideView: HamburgerView = {
-        let sideView = HamburgerView()
-        sideView.backgroundColor = .primary
-        view.addSubview(sideView)
-        return sideView
-    }()
+
 }
 
 
@@ -95,5 +91,11 @@ extension MyWorkViewController {
         
         gradientView.anchor(top: (navBarView.bottomAnchor,0))
         
+    }
+    
+    private func addCallbacks() {
+        navBarView.showHamburgerModal = { [weak self] in
+            self?.viewModel.showHamburgerModal?()
+        }
     }
 }

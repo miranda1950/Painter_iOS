@@ -10,6 +10,7 @@ import UIKit
 final class AddPumpModalView: UIView {
     
     var onDismissed: (() -> Void)?
+    var onConfirmTapped: ((String) -> Void)?
     
     let defaultHeight: CGFloat = UIScreen.main.bounds.height * 0.45
     let dismissibleHeight: CGFloat = UIScreen.main.bounds.height * 0.25
@@ -25,7 +26,6 @@ final class AddPumpModalView: UIView {
         setConstraints()
     }
     
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -34,7 +34,6 @@ final class AddPumpModalView: UIView {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animateDismissView)))
         view.alpha = 0.6
         self.addSubview(view)
         return view
@@ -94,7 +93,7 @@ final class AddPumpModalView: UIView {
                                                    attributes: [NSAttributedString.Key.foregroundColor : UIColor.black,
                                                                 NSAttributedString.Key.font : UIFont.boldMyriad.size(18)])
         button.setAttributedTitle(myAttributedTitle, for: .normal)
-        button.addTarget(self, action: #selector(discardTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(animateDismissView), for: .touchUpInside)
         self.addSubview(button)
         return button
     }()
@@ -106,6 +105,7 @@ final class AddPumpModalView: UIView {
                                                    attributes: [NSAttributedString.Key.foregroundColor : UIColor.black,
                                                                 NSAttributedString.Key.font : UIFont.boldMyriad.size(18)])
         button.setAttributedTitle(myAttributedTitle, for: .normal)
+        button.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
         self.addSubview(button)
         return button
     }()
@@ -135,18 +135,13 @@ extension AddPumpModalView {
         confirmButton.anchor(top: (nameTextField.bottomAnchor,32), trailing: (container.trailingAnchor, 24), size: CGSize(width: 150, height: 60))
     }
     
-    @objc func discardTapped() {
-        UIView.animate(withDuration: AnimationsConstants.durationConstans, delay: 0, options: .curveEaseOut) {
-            self.alpha = 0
-        } completion: { complete in
-            self.onDismissed?()
-        }
+    @objc func confirmTapped() {
+        onConfirmTapped?(nameTextField.text ?? "")
     }
     
     func setupPanGesture() {
-        // add pan gesture recognizer to the view controller's view (the whole screen)
+        
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanAction(gesture:)))
-        // change to false to immediately listen on gesture movement
         panGesture.delaysTouchesBegan = false
         panGesture.delaysTouchesEnded = false
         self.addGestureRecognizer(panGesture)
@@ -156,7 +151,6 @@ extension AddPumpModalView {
     @objc func handlePanAction(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: self)
 
-        // Get drag direction
         let isDraggingDown = translation.y > 0
         print("Dragging direction: \(isDraggingDown ? " down" : " up")")
 

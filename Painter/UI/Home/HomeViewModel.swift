@@ -10,6 +10,7 @@ import UIKit
 
 final class HomeViewModel {
     
+    
     var events = [Events]()
     
     func addEvents() {

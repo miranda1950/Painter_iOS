@@ -10,9 +10,9 @@ import UIKit
 
 final class FleetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var dummyPumps = [Pumps]()
     private var offsetY: CGFloat = 0.0
     private var viewModel: FleetViewModel
+    
     
     init(viewModel: FleetViewModel) {
         self.viewModel = viewModel
@@ -26,7 +26,7 @@ final class FleetViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createDummyData()
+        viewModel.createDummyData()
         setupConstraints()
         setupNavBarAndScreen()
         
@@ -102,26 +102,14 @@ extension FleetViewController {
         addButtton.anchor(bottom: (view.safeAreaLayoutGuide.bottomAnchor, 12), trailing: (view.safeAreaLayoutGuide.trailingAnchor, 12), size: CGSize(width: 60, height: 60))
     }
     
-    func createDummyData() {
-        
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter® 90", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "Control_Pro")!, name: "ControlPro® 350", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "ProSpray 3.25 Cart", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter® 90", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "Control_Pro")!, name: "ProSpray 3.31 Cart", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter3", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "Control_Pro")!, name: "PowerPainter® 90", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "Control_Pro")!, name: "ProSpray 3.31 Cart", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter® 90", impact: "Mighty Impact"))
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyPumps.count
+        return viewModel.dummyPumps.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pumpCell", for: indexPath) as! FleetCardCellView
-        let product = dummyPumps[indexPath.row]
+        let product = viewModel.dummyPumps[indexPath.row]
         cell.selectionStyle = .none
         cell.pump = product
         

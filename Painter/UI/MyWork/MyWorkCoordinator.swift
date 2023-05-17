@@ -22,7 +22,17 @@ final class MyWorkCoordinator: Coordinator {
         let vc = MyWorkViewController(viewModel: vm)
         
         vc.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Subtract"), selectedImage: UIImage(named: "Subtract"))
+        
+        vm.showHamburgerModal = { [weak self] in
+            self?.showHamburgerView()
+        }
         navigationController = UINavigationController(rootViewController: vc)
         return navigationController
+    }
+    
+    private func showHamburgerView() {
+        let vc = HamburgerViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        navigationController.present(vc, animated: false)
     }
 }
