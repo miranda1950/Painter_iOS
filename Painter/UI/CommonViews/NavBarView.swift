@@ -12,6 +12,7 @@ final class NavBarView: UIView {
     
     private var title: String
     private var subtitle: String
+    var showHamburgerModal: (()->Void)?
     
     init(title: String, subtitle: String) {
         self.title = title
@@ -63,9 +64,7 @@ final class NavBarView: UIView {
         return burgerButton
     }()
     
-    @objc func burgerTapped() {
-        print("Brunoooo majstore")
-    }
+    
 }
 
 extension NavBarView {
@@ -81,4 +80,10 @@ extension NavBarView {
         burgerButton.anchor(top: (self.topAnchor, 20), trailing: (self.trailingAnchor, 20))
         
     }
+    
+    @objc func burgerTapped() {
+        showHamburgerModal?()
+    }
+    
+    
 }

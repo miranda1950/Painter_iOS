@@ -10,9 +10,9 @@ import UIKit
 
 final class FleetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var dummyPumps = [Pumps]()
     private var offsetY: CGFloat = 0.0
     private var viewModel: FleetViewModel
+    
     
     init(viewModel: FleetViewModel) {
         self.viewModel = viewModel
@@ -26,7 +26,7 @@ final class FleetViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createDummyData()
+        viewModel.createDummyData()
         setupConstraints()
         setupNavBarAndScreen()
         
@@ -60,7 +60,6 @@ final class FleetViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.register(FleetCardCellView.self, forCellReuseIdentifier: "pumpCell")
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
-        //??
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
@@ -91,7 +90,6 @@ extension FleetViewController {
     
     private func setupConstraints() {
         
-        
         navBarView.anchor(top: (view.safeAreaLayoutGuide.topAnchor, 0),leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor,0 ), size: CGSize(width: 0 ,height: 64))
         
         fleetCardView.anchor(top: (navBarView.bottomAnchor, 16), leading: (view.leadingAnchor,20), trailing: (view.trailingAnchor, 20))
@@ -104,26 +102,14 @@ extension FleetViewController {
         addButtton.anchor(bottom: (view.safeAreaLayoutGuide.bottomAnchor, 12), trailing: (view.safeAreaLayoutGuide.trailingAnchor, 12), size: CGSize(width: 60, height: 60))
     }
     
-    func createDummyData() {
-        
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter® 90", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "Control_Pro")!, name: "ControlPro® 350", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "ProSpray 3.25 Cart", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter® 90", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "Control_Pro")!, name: "ProSpray 3.31 Cart", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter3", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "Control_Pro")!, name: "PowerPainter® 90", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "Control_Pro")!, name: "ProSpray 3.31 Cart", impact: "Mighty Impact"))
-        dummyPumps.append(Pumps(image: UIImage(named: "pump")!, name: "PowerPainter® 90", impact: "Mighty Impact"))
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyPumps.count
+        return viewModel.dummyPumps.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pumpCell", for: indexPath) as! FleetCardCellView
-        let product = dummyPumps[indexPath.row]
+        let product = viewModel.dummyPumps[indexPath.row]
         cell.selectionStyle = .none
         cell.pump = product
         
@@ -148,26 +134,29 @@ extension FleetViewController {
         let offset = offsetY - scrollView.contentOffset.y
         
         if offset <= -1 {
-            UIButton.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
+            UIButton.animate(withDuration: AnimationsConstants.durationConstans, delay: 0, options: .curveEaseIn) {
                 self.addButtton.alpha = 0.0
             }
-            UIButton.animate(withDuration: 0.5, delay: 0) { [self] in
+            UIButton.animate(withDuration: AnimationsConstants.durationConstans, delay: 0) { [self] in
                 self.addButtton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             }
         }
         if offset > 0 {
-            UIButton.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
+            UIButton.animate(withDuration: AnimationsConstants.durationConstans, delay: 0, options: .curveEaseIn) {
                 self.addButtton.alpha = 1.0
             }
-            UIButton.animate(withDuration: 0.5, delay: 0) { [self] in
+            UIButton.animate(withDuration: AnimationsConstants.durationConstans, delay: 0) { [self] in
                 self.addButtton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             }
         }
     }
     
     @objc func addButtonTapped() {
-        print("Pump added")
+        viewModel.showAddModal?()
     }
 }
 
+enum AnimationsConstants {
+    static let durationConstans = 0.3
+}
 

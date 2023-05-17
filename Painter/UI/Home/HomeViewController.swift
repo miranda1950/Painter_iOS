@@ -15,7 +15,6 @@ final class HomeViewController: UIViewController {
     
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
-        //superinit?
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -72,7 +71,7 @@ final class HomeViewController: UIViewController {
     }()
     
     private lazy var stackView: UIStackView = {
-//        let verticalStackView = UIStackView(arrangedSubviews: [firstEventCardView,secondEventCardView, thirdEventCardView, fourthEventCardView, fifthEventCardView])
+
         let verticalStackView = UIStackView()
         verticalStackView.axis = .vertical
         verticalStackView.spacing = 16
@@ -80,31 +79,6 @@ final class HomeViewController: UIViewController {
         return verticalStackView
         
     }()
-    
-//    private lazy var firstEventCardView: EventCardView = {
-//        let cardView = EventCardView(date: Date.now, eventDescription: "New tip for your sprayer available now for little price!", eventImage: UIImage(named: "eventImage"))
-//        return cardView
-//    }()
-//
-//    private lazy var secondEventCardView: EventCardView = {
-//        let cardView = EventCardView(date: Date.now, eventDescription: "Don’t miss The Farbe Conference nearby!", eventImage: UIImage(named: "eventImage"))
-//        return cardView
-//    }()
-//
-//    private lazy var thirdEventCardView: EventCardView = {
-//        let cardView = EventCardView(date: Date.distantFuture, eventDescription: "New tip for your sprayer available now!", eventImage: UIImage(named: "eventImage"))
-//        return cardView
-//    }()
-//
-//    private lazy var fourthEventCardView: EventCardView = {
-//        let cardView = EventCardView(date: Date.distantPast, eventDescription: "Check gun filter on IMPAC 840 HIGH RIDER", eventImage: nil)
-//        return cardView
-//    }()
-//
-//    private lazy var fifthEventCardView: EventCardView = {
-//        let cardView = EventCardView(date: Date.now, eventDescription: "Don’t miss The Farbe Conference nearby!", eventImage: UIImage(named: "eventImage"))
-//        return cardView
-//    }()
     
     private lazy var backgroundView: UIView = {
         let backView = UIView()

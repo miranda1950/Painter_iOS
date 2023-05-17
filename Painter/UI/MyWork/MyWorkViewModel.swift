@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 final class MyWorkViewModel {
-    
+    var showHamburgerModal: (()->Void)?
 }
 
 

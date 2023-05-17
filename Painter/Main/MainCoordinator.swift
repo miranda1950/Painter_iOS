@@ -10,7 +10,7 @@ import UIKit
 
 final class MainCoordinator: Coordinator {
     var navigationController = UINavigationController()
-    var childCoordinators: [Coordinator] = [HomeCoordinator(), FleetCoordinator(), MyWorkCoordinator()]
+    var childCoordinators: [Coordinator] = [HomeCoordinator(), FleetCoordinator(), MyWorkCoordinator(), TestTabCoordinator()]
     
     func start() -> UIViewController {
         return createTabBar()

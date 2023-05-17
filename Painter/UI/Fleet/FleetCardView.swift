@@ -71,6 +71,7 @@ extension FleetCardView {
         fleetNameLabel.anchor(top: (fleetLabel.bottomAnchor,4), leading: (self.leadingAnchor, 16),trailing: (self.trailingAnchor, 16),size: CGSize(width: 0, height: 24))
         
         membersStack.anchor(top: (fleetNameLabel.bottomAnchor, 8), bottom: (self.bottomAnchor, 16), leading: (self.leadingAnchor, 16))
+        
     }
     
     func fleetMembersCircle(_ members: Int) {

@@ -22,7 +22,7 @@ final class EventCardView: UIView {
         
         setAppearance()
         
-        if let _ = eventImage {
+        if eventImage != nil {
             constraintsWithImage()
         }
         else {

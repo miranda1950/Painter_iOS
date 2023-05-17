@@ -17,7 +17,6 @@ final class MyWorkCardView: UIView {
     private var jobCount: Int
     private var searchImageName: String
     
-    //320 width?
     init(projects: String, jobs: String, search: String, projectCount: Int, jobCount: Int, searchImageName: String) {
         self.projects = projects
         self.jobs = jobs

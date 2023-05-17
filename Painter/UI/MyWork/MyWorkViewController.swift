@@ -10,7 +10,6 @@ import UIKit
 
 final class MyWorkViewController: UIViewController {
     
-    lazy var slideInMenuPadding: CGFloat = self.view.frame.width * 0.30
     
     private var dummyData = "It seems there is no paint work documented, yet. Once you create some jobs, they will appear in this list."
     
@@ -31,6 +30,7 @@ final class MyWorkViewController: UIViewController {
         
         setupConstraints()
         setupNavBarAndScreen()
+        addCallbacks()
         self.view.sendSubviewToBack(gradientView)
         
     }
@@ -74,12 +74,7 @@ final class MyWorkViewController: UIViewController {
         return(gradView)
     }()
     
-    private lazy var sideView: HamburgerView = {
-        let sideView = HamburgerView()
-        sideView.backgroundColor = .primary
-        view.addSubview(sideView)
-        return sideView
-    }()
+
 }
 
 
@@ -96,5 +91,11 @@ extension MyWorkViewController {
         
         gradientView.anchor(top: (navBarView.bottomAnchor,0))
         
+    }
+    
+    private func addCallbacks() {
+        navBarView.showHamburgerModal = { [weak self] in
+            self?.viewModel.showHamburgerModal?()
+        }
     }
 }
